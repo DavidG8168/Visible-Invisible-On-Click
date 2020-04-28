@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Visibility Test</title>
+    <script>
+    // Normal button click.
+      function changeVisibility() {
+        var status = document.getElementById("MyParagraph").style.visibility;
+        if(status == "hidden") {
+          document.getElementById("MyParagraph").style.visibility = "visible";
+        } else {
+          document.getElementById("MyParagraph").style.visibility = "hidden";
+        }
+      }
+      // Crazy paragraph, changes every few seconds.
+      function changeVisibilityCrazy() {
+        var status = document.getElementById("MyParagraphCrazy").style.visibility;
+        if(status == "hidden") {
+          document.getElementById("MyParagraphCrazy").style.visibility = "visible";
+        } else {
+          document.getElementById("MyParagraphCrazy").style.visibility = "hidden";
+        }
+      }
+      window.setInterval(function(){
+      changeVisibilityCrazy();
+    }, 4000);
+    </script>
+  </head>
+  <body>
+    <div id="MyDiv" class="MyDivClass">
+      <p id="MyParagraph" class ="MyParagraphClass">
+        Hello, this text should become invisible when you click the button and
+        become visible when you click the button again.
+      </p>
+      <button id="MyButton" class="MyButtonClass" onclick="changeVisibility()">
+         Click me!</button>
+      <p id="MyParagraphCrazy" class ="MyParagraphClassCrazy">
+        This paragraph becomes visible and invisible randomly.
+      </p>
+    </div>
+  </body>
+</html>
